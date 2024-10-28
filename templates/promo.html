@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/promo.css">
+    <title>Promotion {{.NomClasse}}</title>
+</head>
+<body>
+<h1>Classe : {{.NomClasse}}</h1>
+<p><strong>Filière :</strong> {{.Filiere}}</p>
+<p><strong>Niveau :</strong> {{.Niveau}}</p>
+<p><strong>Nombre d'étudiants :</strong> {{.NombreEtudiants}}</p>
+
+<h2>Liste des étudiants</h2>
+{{range .Etudiants}}
+<div class="etudiant">
+    <p><strong>Nom :</strong> {{.Nom}}</p>
+    <p><strong>Prénom :</strong> {{.Prenom}}</p>
+    <p><strong>Âge :</strong> {{.Age}}</p>
+    <p><strong>Sexe :</strong>
+        {{if eq .Sexe "M"}}
+        <img src="/images/male.png" alt="Masculin">
+        {{else}}
+        <img src="/images/female.png" alt="Féminin">
+        {{end}}
+    </p>
+</div>
+{{end}}
+</body>
+</html>
